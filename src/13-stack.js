@@ -1,4 +1,4 @@
-/**
+/*
  * Implement the Stack with a given interface via array.
  *
  * @example
@@ -11,16 +11,24 @@
  *
  */
 class Stack {
-  push(/* element */) {
-    throw new Error('Not implemented');
+  constructor() {
+    this.top = 0;
+    this.data = [];
+  }
+
+  push(element) {
+    this.data[this.top] = element;
+    this.top += 1;
   }
 
   pop() {
-    throw new Error('Not implemented');
+    const deleteElem = this.data[this.top - 1];
+    this.top -= 1;
+    return deleteElem;
   }
 
   peek() {
-    throw new Error('Not implemented');
+    return this.data[this.top - 1];
   }
 }
 
